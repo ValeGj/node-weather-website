@@ -8,9 +8,9 @@ const forecast = (latitude, longitude, units, callback) => {
             callback('Unable to connect to the weather service!',undefined);
         } else if (body.error) {
             callback('Unable to find the location!',undefined);
-        } else {
+        } else {            
             callback(undefined,{
-                weatherDescription: body.current.weather_descriptions[0] + ', the outside temperature is ' + body.current.temperature +  ' degrees celsius, feels like ' + body.current.feelslike + '.'
+                weatherDescription: body.current.weather_descriptions[0] + ', the outside temperature is ' + body.current.temperature +  ' degrees celsius, it feels like ' + body.current.feelslike + '. The humidity is ' + body.current.humidity + '%.'
                     //weatherDescription: body.current.weather_descriptions[0], 
                     //currentTemperature: body.current.temperature,
                     //feelslike:body.current.feelslike
